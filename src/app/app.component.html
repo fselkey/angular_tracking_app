@@ -1,0 +1,139 @@
+
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+
+<mat-card>
+  <mat-card-title>Order Track Example</mat-card-title>
+  <mat-card-subtitle>with checkboxes</mat-card-subtitle>
+
+  <mat-card-content>
+    <div
+      class="container"
+      fxLayout="row"
+      fxLayoutAlign="center"
+      fxLayoutGap.xs="0" >
+      <div fxFlex="5%">
+
+        <mat-slider vertical invert min="1" max="4" step="1" [value]="this.sliderValue"></mat-slider>
+
+      </div>
+      <div fxFlex="95%">
+        <mat-list>
+  
+          <mat-list-item>
+            <mat-checkbox [checked]="this.track.received" (change)="updateReceiveStatus($event.checked)">Received</mat-checkbox>
+          </mat-list-item>
+    
+          <mat-list-item>
+            <mat-checkbox [checked]="this.track.tested" (change)="updateTestStatus($event.checked)">Tested</mat-checkbox>
+          </mat-list-item>
+    
+          <mat-list-item>
+            <mat-checkbox [checked]="this.track.shipped" (change)="updateShipStatus($event.checked)">Shipped</mat-checkbox>
+          </mat-list-item>
+    
+        </mat-list>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Order Track Example</mat-card-title>
+  <mat-card-subtitle>with icons</mat-card-subtitle>
+
+  <mat-card-content>
+    <div
+      class="container"
+      fxLayout="row"
+      fxLayoutAlign="center"
+      fxLayoutGap.xs="0" >
+        
+      <div fxFlex="5%">
+
+        <mat-slider vertical invert min="1" max="4" step="1" [value]="this.sliderValue"></mat-slider>
+
+      </div>
+      <div fxFlex="95%">
+        <mat-list>
+
+          <mat-list-item>
+            <mat-icon matListIcon>{{ receivedIcon }}</mat-icon>
+            <p matLine>Received</p>    
+          </mat-list-item>
+
+          <mat-list-item>
+            <mat-icon matListIcon>{{ testedIcon }}</mat-icon>
+            <p matLine>Tested</p>
+          </mat-list-item>
+
+          <mat-list-item>
+            <mat-icon matListIcon>{{ shippedIcon }}</mat-icon>
+            <p matLine>Shipped</p>
+          </mat-list-item>
+
+        </mat-list>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+
+<mat-card>
+  <mat-card-title>Order Information</mat-card-title>
+  <mat-card-subtitle>SO: {{ this.order.so_num }}</mat-card-subtitle>
+  <mat-card-subtitle>PO: {{ this.order.po_num }}</mat-card-subtitle>
+  <mat-card-content>Other order related information</mat-card-content>
+  <mat-card-footer>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <p>View Tracking Info</p>
+      </mat-expansion-panel-header>
+
+      <mat-card>
+        <mat-card-title>Order Track Example</mat-card-title>
+        <mat-card-subtitle>with icons</mat-card-subtitle>
+      
+        <mat-card-content>
+          <div
+            class="container"
+            fxLayout="row"
+            fxLayoutAlign="center"
+            fxLayoutGap.xs="0" >
+              
+            <div fxFlex="5%">
+      
+              <mat-slider vertical invert min="1" max="4" step="1" [value]="this.sliderValue"></mat-slider>
+      
+            </div>
+            <div fxFlex="95%">
+              <mat-list>
+      
+                <mat-list-item>
+                  <mat-icon matListIcon>{{ receivedIcon }}</mat-icon>
+                  <p matLine>Received</p>    
+                </mat-list-item>
+      
+                <mat-list-item>
+                  <mat-icon matListIcon>{{ testedIcon }}</mat-icon>
+                  <p matLine>Tested</p>
+                </mat-list-item>
+      
+                <mat-list-item>
+                  <mat-icon matListIcon>{{ shippedIcon }}</mat-icon>
+                  <p matLine>Shipped</p>
+                </mat-list-item>
+      
+              </mat-list>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    
+    
+    </mat-expansion-panel>
+  </mat-card-footer>
+
+</mat-card>
